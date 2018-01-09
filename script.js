@@ -1,9 +1,13 @@
+
+
+var hw = [];
+
 function calculateGrade (){
 
 }
 
 
-function StringToArray (){
+function stringToArray (){
     var split = hw.split(",");
 }
 
