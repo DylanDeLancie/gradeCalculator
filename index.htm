@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <title>Grade Calculator</title>
     <script src="script.js"></script>
-    <link rel="stylesheet" href="stylesheet.css"/>
+    <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
 
 <div id="title">Grade Calculator</div>
 
 
-<table id = "table1" border=”1” cellspacing=”3” cellpadding=”5”>
+<table id = "table1" border="1" cellspacing="0" cellpadding="8">
 
     <tr id = "hw">
         <td>Homework grades:<input type="text" id="homework" placeholder="Homework grades" size="25" value="100"></td>
@@ -35,6 +35,7 @@
         <td id = "avgMidterm" class="c3"></td>
     </tr>
     <tr id = "f">
+
         <td>Final weight:<input type="text" id="fWeight" placeholder="Final weight" size="25" value = "20"></td>
         <td>Desired grade:<input type="text" id="dGrade" placeholder="Desired grade" size="25" value = "90"></td>
         <td id = "totalGrade" class="c3"></td>
@@ -43,8 +44,9 @@
         <td id = "gradeNeeded" colspan="3"  ></td>
     </tr>
 </table>
+<center><button id="getGrade" onclick="calculateCurrentGrade()">Calculate current grade and get final grade needed</button></center>
 
-<button id="getGrade" onclick="calculateCurrentGrade()">Calculate current grade and get final grade needed</button>
+
 <div id="currentGrade"></div>
 <div id="finalGradeNeeded"></div>
 <div id="error"></div>
