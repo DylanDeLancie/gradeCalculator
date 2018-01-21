@@ -30,10 +30,18 @@ function calculateCurrentGrade(){
     document.getElementById("avgMidterm").innerHTML = "Your total midterm grade is " + midtermGrade + "%";
     colorGrade(document.getElementById("avgMidterm"), midtermGrade);
 
-    var hw = (hwGrade * hwW) / 100;
-    var quiz = (quizGrade * qW) / 100;
-    var test = (testGrade * tW) / 100;
-    var midterm = (midtermGrade * mW) / 100;
+    if (hwGrade <= 120){
+        var hw = (hwGrade * hwW) / 100;
+    }
+    if (quizGrade <= 120){
+        var quiz = (quizGrade * qW) / 100;
+    }
+    if (testGrade <= 120){
+        var test = (testGrade * tW) / 100;
+    }
+    if (midtermGrade <= 120){
+        var midterm = (midtermGrade * mW) / 100;
+    }
     var currentGrade = Math.round(100 * ((hw + quiz + test + midterm) / (100 - fW)));
     document.getElementById("totalGrade").innerHTML = "Your current grade is a " + currentGrade + "%";
     colorGrade(document.getElementById("totalGrade"), currentGrade);
