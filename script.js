@@ -43,7 +43,11 @@ function calculateCurrentGrade(){
         var midterm = (midtermGrade * mW) / 100;
     }
     var currentGrade = Math.round(100 * ((hw + quiz + test + midterm) / (100 - fW)));
-    document.getElementById("totalGrade").innerHTML = "Your current grade is a " + currentGrade + "%";
+    if (isNaN(currentGrade) == true){
+        document.getElementById("totalGrade").innerHTML = "The grades you have entered are not feasible. Please try again";
+    } else {
+        document.getElementById("totalGrade").innerHTML = "Your current grade is a " + currentGrade + "%";
+    }
     colorGrade(document.getElementById("totalGrade"), currentGrade);
     calculateGradeNeeded(currentGrade);
 }
@@ -52,7 +56,9 @@ function calculateGradeNeeded(g){
     var x = (1-((document.getElementById("fWeight").value)/100)) * (g/100);
     var y = ((document.getElementById("dGrade").value)/100) - x;
     var finalGradeNeeded = Math.round((y / ((document.getElementById("fWeight").value)/100)) * 100);
-
+    if (isNaN(finalGradeNeeded) == true){
+        return document.getElementById("gradeNeeded").innerHTML = "Enter real grades"
+    }
     if(finalGradeNeeded >= 100){
         return document.getElementById("gradeNeeded").innerHTML = "You need a "  +  finalGradeNeeded  +  "% on the final to get your desired grade. Better luck next semester!";
     }
