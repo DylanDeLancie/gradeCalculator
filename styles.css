@@ -5,7 +5,7 @@
     margin-top: 30px;
 }
 
-#table1 {
+#table1,#table2 {
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
@@ -17,6 +17,16 @@
     padding:10px;
     border-radius: 25px;
 }
+#getCost {
+    margin: auto;
+    margin-top: 50px;
+    padding:10px;
+    border-radius: 25px;
+}
+#getCost:hover{
+    color: whitesmoke;
+    background-color: dimgrey;
+}
 #getGrade:hover{
     color: whitesmoke;
     background-color: dimgrey;
@@ -24,4 +34,13 @@
 
 body {
     background-color: mintcream;
+}
+
+#center {
+    width: 65%;
+    margin:auto;
+    text-align: center;
+}
+#disclaimer {
+    margin-top: 50px;
 }
